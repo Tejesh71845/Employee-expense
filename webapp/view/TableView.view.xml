@@ -1,0 +1,82 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.app.project4.controller.TableView"
+>
+    <Page
+        id="tablePage"
+        title="Expense Table"
+        showHeader="true"
+        enableScrolling="true"
+    >
+        <VBox class="table-container" fitContainer="true">
+            <!-- Search Bar -->
+            <HBox class="search-container">
+                <SearchField
+                    id="employeeSearchField"
+                    placeholder="Enter Employee ID"
+                    liveChange="onSearchEmployee"
+                    width="100%"
+                />
+                <Button
+                    text="Go Back"
+                    press="goToMainView"
+                    class="fetch-button"
+                />
+            </HBox>
+
+            <!-- Table -->
+            <Table
+                id="expenseTable"
+                class="responsive-table"
+                items="{expense>/expenses}"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Expenses" />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Employee ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Amount" />
+                    </Column>
+                    <Column>
+                        <Text text="Description" />
+                    </Column>
+                    <Column>
+                        <Text text="Date" />
+                    </Column>
+                    <Column>
+                        <Text text="Time" />
+                    </Column>
+                    <Column>
+                        <Text text="Cost Center" />
+                    </Column>
+                    <Column>
+                        <Text text="Status" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{expense>id}" />
+                            <Text text="{expense>employeeId}" />
+                            <Text text="{expense>amount}" />
+                            <Text text="{expense>description}" />
+                            <Text text="{expense>date}" />
+                            <Text text="{expense>time}" />
+                            <Text text="{expense>costCenter}" />
+                            <Text text="{expense>status}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+    </Page>
+</mvc:View>

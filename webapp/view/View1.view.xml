@@ -1,0 +1,112 @@
+<mvc:View
+    controllerName="com.app.project4.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="page"
+        title="Employee Expense"
+    >
+        <VBox class="container">
+            <VBox class="form-container">
+                <!-- Employee ID -->
+                <HBox class="form-group">
+                    <Label text="Employee ID" />
+                    <Input
+                        id="employeeIdInput"
+                        placeholder="Enter Employee ID"
+                    />
+                </HBox>
+
+                <!-- Amount -->
+                <HBox class="form-group">
+                    <Label text="Amount" />
+                    <Input
+                        id="amountInput"
+                        type="Number"
+                        placeholder="Enter amount"
+                    />
+                </HBox>
+
+                <!-- Description -->
+                <HBox class="form-group">
+                    <Label text="Description" />
+                    <Input
+                        id="descriptionInput"
+                        placeholder="Enter description"
+                    />
+                </HBox>
+
+                <!-- Date -->
+                <HBox class="form-group">
+                    <Label text="Date" />
+                    <DatePicker
+                        id="datePicker"
+                        displayFormat="yyyy-MM-dd"
+                        valueFormat="yyyy-MM-ddTHH:mm:ss"
+                    />
+                </HBox>
+
+                <!-- Time -->
+                <HBox class="form-group">
+                    <Label text="Time" />
+                    <TimePicker
+                        id="timePicker"
+                        displayFormat="HH:mm"
+                        valueFormat="HH:mm"
+                        placeholder="Select time"
+                    />
+                </HBox>
+
+                <!-- Select Cost Center -->
+                <HBox class="form-group">
+                    <Label text="Select Cost Center" />
+                    <Select
+                        id="costCenterSelect"
+                        items="{/A_CostCenter}"
+                    >
+                        <core:Item
+                            key="{CostCenter}"
+                            text="{CostCenter}"
+                        />
+                    </Select>
+                </HBox>
+
+                <!-- Status -->
+                <!-- <HBox class="form-group">
+                    <Label text="Status" />
+                    <Select
+                        id="statusSelect"
+                        selectedKey="PENDING"
+                    >
+                        <items>
+                            <core:Item
+                                key="DONE"
+                                text="DONE"
+                            />
+                            <core:Item
+                                key="PENDING"
+                                text="PENDING"
+                            />
+                        </items>
+                    </Select>
+                </HBox> -->
+
+                <!-- Submit and Fetch Data Buttons -->
+                <HBox class="form-buttons">
+                    <Button
+                        text="Submit"
+                        press="onSubmit"
+                        class="submit-button"
+                    />
+                    <Button
+                        text="Go to Employee Expenses"
+                        press="onFetchDetails"
+                        class="fetch-button"
+                    />
+                </HBox>
+            </VBox>
+        </VBox>
+    </Page>
+</mvc:View>
